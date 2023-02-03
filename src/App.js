@@ -7,7 +7,6 @@ function App() {
     localStorage.getItem("currentPage") || 1
   );
   const setActivePage = (page) => {
-    console.log(page);
     setCurrentPage(page);
     localStorage.setItem("currentPage", page);
   };
