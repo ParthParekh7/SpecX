@@ -1,8 +1,7 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import { Context } from "../App";
 
 export const Pagination = ({ pages }) => {
-    
   const { setActivePage, currentPage } = useContext(Context);
   const handleNext = () => {
     setActivePage(parseInt(currentPage) + 1);
@@ -15,7 +14,7 @@ export const Pagination = ({ pages }) => {
     setActivePage(page);
   };
 
-  return (
+  return pages.length > 0 ? (
     <ul className="pagination">
       <li
         className={[
@@ -58,5 +57,7 @@ export const Pagination = ({ pages }) => {
         )}
       </li>
     </ul>
+  ) : (
+    <span>No data found...</span>
   );
 };
